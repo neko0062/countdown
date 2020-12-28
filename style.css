@@ -1,0 +1,108 @@
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&family=Jost&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+
+  color: black;
+  background: white;
+  font: bold calc(8px + 2.75vw + 2.75vh) "M PLUS Rounded 1c", sans-serif;
+}
+
+.app {
+  --safe-top: calc(env(safe-area-inset-bottom));
+  --safe-bottom: calc(env(safe-area-inset-bottom));
+  --safe-left: calc(env(safe-area-inset-right));
+  --safe-right: calc(env(safe-area-inset-left));
+
+  display: grid;
+  grid-template-rows: max-content 1fr max-content;
+  height: 100vh;
+}
+
+
+/* title */
+.header {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+
+  font-family: "Jost", sans-serif;
+  font-size: 50%;
+  opacity: 0.5;
+}
+#title {
+  padding: 0 1em;
+  border-bottom: solid 0.1em gray;
+}
+#title > span {
+  font-size: 125%;
+}
+#clock {
+  margin: auto;
+  margin-right: 1em;
+}
+
+/* clock */
+.time-container {
+  display: grid;
+}
+.message {
+  margin: auto;
+  margin-bottom: 0;
+  font-size: 75%;
+}
+.time {
+  margin: auto;
+  margin-top: 0;
+  padding: 0 0.5em;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  font-size: 150%;
+}
+
+.time > p {
+  margin: 0 0.05em;
+  font-size: 135%;
+}
+.time > p > span:not([id]) {
+  margin-left: 0.25em;
+  font-size: 50%;
+}
+.time > p > span > span {
+  display: inline-block;
+  margin: 0 0.05em;
+  width: 0.5em;
+}
+
+
+/* progress */
+#progress-bar {
+  background: linear-gradient(to right, #ff78, #f778);
+}
+#progress-text {
+  padding: 0 0.5em;
+  width: 100vw;
+
+  text-align: right;
+  font-family: "Jost", sans-serif;
+  font-size: 75%;
+  line-height: 1.2;
+}
+#progress-text > span {
+  font-size: 125%;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: white;
+    background: black;
+  }
+}
