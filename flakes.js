@@ -1,7 +1,6 @@
 
 /* flakes.js */
 
-let $background;
 let $canvas;
 let ctx;
 let width;
@@ -18,7 +17,6 @@ let flake_timer;
 /* キャンバス初期化 */
 function init_flakeAnimation() {
   //
-  $background = document.querySelector(".background")
   $canvas = document.querySelector("canvas#flakes");
   ctx = $canvas.getContext("2d");
 
