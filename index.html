@@ -27,7 +27,7 @@
       </div>
     </div>
     <div class="link-box">
-      <p><a href="https://github.com/neko0062/countdown">GitHub</a></p>
+      <p>@neko0062 <a href="https://github.com/neko0062/countdown">GitHub</a></p>
     </div>
     <div id="progress-bar">
       <p id="progress-text"><span>---</span>.-----%</p>
@@ -35,5 +35,29 @@
   </div>
   <script src="./flakes.js"></script>
   <script src="./countdown.js"></script>
+  <script>
+    //
+    let $background = document.querySelector(".background");
+    let $app = document.querySelector(".app");
+    function resize_app() {
+      $background.style.height = window.innerHeight + 'px';
+      $app.style.height = window.innerHeight + 'px';
+      console.log($background.clientHeight);
+    }
+
+    document.body.onload = () => {
+      resize_app();
+
+      //カウントダウン開始
+      update_countdown();
+      setInterval(update_countdown, 1000);
+    };
+
+    let timeout_id;
+    window.addEventListener("resize", () => {
+      clearTimeout(timeout_id);
+      timeout_id = setTimeout(resize_app, 500);
+    });
+  </script>
 </body>
 </html>

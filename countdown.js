@@ -1,6 +1,7 @@
 
 /* countdown.js */
 
+const $clock = document.querySelector("#clock");
 const $message_text = document.querySelector("#message-text");
 const $nextyear_text = document.querySelector("#nextyear-text");
 
@@ -12,16 +13,19 @@ const $sec = document.querySelector("#sec");
 const $progress_bar  = document.querySelector("#progress-bar");
 const $progress_text = document.querySelector("#progress-text");
 
-const $clock = document.querySelector("#clock");
-
+//
 const curr_year = new Date().getFullYear();
 const curr_year_start = new Date(`${curr_year}/01/01 00:00:00`).getTime();
 const next_year_start = new Date(`${(curr_year + 1)}/01/01 00:00:00`).getTime();
 const curr_year_seconds = next_year_start - curr_year_start;
 
+//表示
+$message_text.textContent = `${(curr_year + 1)}年まであと`;
+$nextyear_text.textContent = `${(curr_year + 1)}`;
+
 let animation = false;
 
-//文字列を分割して1文字ずつspan
+//文字列を分割して1文字ずつspanにする
 const span_character = text => {
   let result = "";
   for (let i in text) {
@@ -31,7 +35,7 @@ const span_character = text => {
 }
 
 //残り時間を更新
-function update() {
+function update_countdown() {
   const dt = new Date();
   const time_now = dt.getTime();
 
@@ -76,16 +80,8 @@ function update() {
   //カウントダウンが完了した時
   if (progress == 100 && !animation) {
     $message_text.innerHTML = "<span>Happy New Year!</span>";
-    
+
     init_flakeAnimation();
     animation = true;
   }
 }
-
-//
-window.onload = () => {
-  $message_text.textContent = `${(curr_year + 1)}年まであと`;
-  $nextyear_text.textContent = `${(curr_year + 1)}`;
-  update();
-  setInterval(update, 1000);
-};
