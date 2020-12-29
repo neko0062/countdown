@@ -14,6 +14,14 @@ body {
   font: bold calc(8px + 2.75vw + 2.75vh) "M PLUS Rounded 1c", sans-serif;
 }
 
+/* canvas */
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
 .app {
   --safe-top: calc(env(safe-area-inset-bottom));
   --safe-bottom: calc(env(safe-area-inset-bottom));
@@ -21,7 +29,12 @@ body {
   --safe-right: calc(env(safe-area-inset-left));
 
   display: grid;
-  grid-template-rows: max-content 1fr max-content;
+  grid-template-rows: max-content 1fr max-content max-content;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
   height: 100vh;
 }
 
@@ -56,6 +69,9 @@ body {
   margin-bottom: 0;
   font-size: 75%;
 }
+#message-text > span {
+  font-size: 150%;
+}
 .time {
   margin: auto;
   margin-top: 0;
@@ -80,6 +96,15 @@ body {
   display: inline-block;
   margin: 0 0.05em;
   width: 0.5em;
+}
+
+
+/* link-box */
+.link-box {
+  font-size: 16px;
+}
+.link-box > p {
+  margin: 0 1em;
 }
 
 

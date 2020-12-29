@@ -8,14 +8,17 @@
   <link rel="manifest" href="./manifest.json">
 </head>
 <body>
+  <div class="background">
+    <canvas id="flakes"></canvas>
+  </div>
   <div class="app">
     <div class="header">
       <p id="title"><span id="nextyear-text">−−−−</span> countdown</p>
-      <p id="clock">12/29 23:00:00</p>
+      <p id="clock">--/-- --:--:--</p>
     </div>
     <div class="time-container">
       <div class="message">
-        <p>2021年まであと</p>
+        <p id="message-text"></p>
       </div>
       <div class="time">
         <p><span id="hour">---</span><span>時間</span></p>
@@ -23,10 +26,14 @@
         <p><span id="sec">--</span><span>秒</span></p>
       </div>
     </div>
+    <div class="link-box">
+      <p><a href="https://github.com/neko0062/countdown">GitHub</a></p>
+    </div>
     <div id="progress-bar">
-      <p id="progress-text"><span>---</span>.-----% 完了</p>
+      <p id="progress-text"><span>---</span>.-----%</p>
     </div>
   </div>
+  <script src="./flakes.js"></script>
   <script src="./countdown.js"></script>
 </body>
 </html>
