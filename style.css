@@ -6,6 +6,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+a:visited {
+  color: #c7f;
+}
 
 body {
   overflow: hidden;
@@ -30,7 +33,7 @@ body {
   --safe-right: calc(env(safe-area-inset-left));
 
   display: grid;
-  grid-template-rows: max-content 1fr max-content max-content;
+  grid-template-rows: max-content max-content 1fr max-content;
 
   position: fixed;
   top: 0;
@@ -104,10 +107,11 @@ body {
 
 /* Link */
 .link-box {
-  font-size: 16px;
+  font-size: 30%;
+  opacity: 0.5;
 }
 .link-box > p {
-  margin: 0 1em;
+  margin: 0 calc(var(--safe-left) + 1em);
 }
 
 
