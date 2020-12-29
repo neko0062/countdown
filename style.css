@@ -60,6 +60,7 @@ body {
 #clock {
   margin: auto;
   margin-right: calc(var(--safe-right) + 1em);
+  font-size: 90%;
 }
 
 /* Time */
@@ -72,7 +73,7 @@ body {
   font-size: 75%;
 }
 #message-text > span {
-  font-size: 150%;
+  font-size: 135%;
 }
 .time {
   margin: auto;
