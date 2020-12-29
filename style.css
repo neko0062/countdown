@@ -1,5 +1,6 @@
 /* style.css */
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&family=Jost&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +15,7 @@ body {
   font: bold calc(8px + 2.75vw + 2.75vh) "M PLUS Rounded 1c", sans-serif;
 }
 
-/* canvas */
+/* Background */
 .background {
   position: fixed;
   top: 0;
@@ -36,10 +37,11 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
+  transition: height 0.2s ease-in-out;
 }
 
 
-/* title */
+/* Title */
 .header {
   display: grid;
   grid-template-columns: max-content 1fr;
@@ -49,7 +51,7 @@ body {
   opacity: 0.5;
 }
 #title {
-  padding: 0 1em;
+  padding: 0 calc(var(--safe-left) + 1em);
   border-bottom: solid 0.1em gray;
 }
 #title > span {
@@ -57,10 +59,10 @@ body {
 }
 #clock {
   margin: auto;
-  margin-right: 1em;
+  margin-right: calc(var(--safe-right) + 1em);
 }
 
-/* clock */
+/* Time */
 .time-container {
   display: grid;
 }
@@ -99,7 +101,7 @@ body {
 }
 
 
-/* link-box */
+/* Link */
 .link-box {
   font-size: 16px;
 }
@@ -108,12 +110,12 @@ body {
 }
 
 
-/* progress */
+/* Progress */
 #progress-bar {
   background: linear-gradient(to right, #ff78, #f778);
 }
 #progress-text {
-  padding: 0 0.5em;
+  padding: 0 calc(var(--safe-right) + 0.5em);
   width: 100vw;
 
   text-align: right;
